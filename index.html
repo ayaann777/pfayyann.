@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css"/>
+<style>
+    @font-face {
+        font-family:font3;
+        src: url(f3.ttf);
+    }
+    @font-face {
+        font-family:font2;
+        src: url(f2.ttf);
+    }
+    @font-face {
+        font-family:font4;
+        src: url(f4.ttf);
+    }
+    @font-face {
+        font-family:font1;
+        src: url(f1.ttf);
+    }
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: font3;
+    }
+    body{
+        background:#BFB9AF;
+    }
+ *::selection{
+    background-color: #1C1B19;
+    color: #BFB9AF;
+ }
+    #page1{
+        height:100%;
+        width: 100%;
+        position: relative;
+        background:#BFB9AF;
+
+    }
+    /* removed duplicate page3 block (use unified one below) */
+    #page2{
+        height:150%;
+        width: 100%;
+        background:#BFB9AF;
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+margin-top: -200px !important;
+position: relative;
+    }
+
+    #nav{
+        border-bottom: 1px solid rgb(112, 111, 111);
+        height: 100px;
+        background:#1C1C1A;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 70px;
+        width: 100%;
+        color: #BFB9AF;;
+
+    }
+    #nav img{
+      
+      width: 15%;
+    }
+    #nav h1{
+        font-size: 25px;
+   letter-spacing: 2px;
+        width: 30%;
+        color:#BFB9AF;
+        font-family: font2;
+    }
+    #nav i {
+        width: 30%;
+        text-align: right;
+        font-size: 20px;
+        color:#BFB9AF;
+        font-weight: 800;
+    }
+    .elem{
+        margin-top: 50px;
+height: 400px;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 40px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+    } 
+    .elem1{
+        height:100%;
+        width: 30%;
+        flex-wrap: wrap;
+        
+    }
+    .elem1 h1{
+        margin-top: 30px;
+        font-family: font2;
+    }
+    .elem2{
+        height:80%;
+        width: 30%;
+   
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        border-right: 1px solid rgb(112, 111, 111);
+        border-left: 1px solid  rgb(112, 111, 111);
+    }
+    .elem3{
+        height:100%;
+        width: 30%;
+       
+    }
+    .wrap img{
+height: 300px;
+width: 100%;
+object-fit: cover;
+overflow: hidden;
+border: 1px solid black;
+border-radius: 10px;
+
+    }
+    .wrap{
+        overflow: hidden;
+    }
+
+    .elem2 h3{
+        text-align: center;
+        font-size: 4vw;
+        font-family: font2;
+        font-weight: 500;
+        letter-spacing: -3px;}
+    .elem2 h4{
+text-align: center;
+
+width: 81%;
+font-size: 2vw;
+font-family: font3;
+font-weight: 500;
+    }
+    .elem2 h2{
+        font-family: font2;
+        letter-spacing: 1px;
+        font-weight: 100;
+
+    }
+    .elem3 h1{
+     font-family: font2;
+    margin-top: 30px;
+    }
+    .elem1 h5{
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 16px;
+    }
+    .elem3 h5{
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 16px;
+    }
+    .elem h1{
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    #page1 .mir{
+        font-family: font2;
+        font-size: 20vw;
+        margin-top: 100px;
+    
+        width: 97%;
+  margin: 200px 20px;
+        line-height: 340px;
+        letter-spacing: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        height: 40vh;
+        border-radius: 20px;
+        transition: all .6s ease;
+        border: 3px solid #1c1c1A ;
+        background-color:  #BFB9AF;
+        color:#1C1C1A;
+    }
+   #page1 .mir:hover{
+    background:#1C1C1A;
+    color: #BFB9AF;
+    }
+    body, html {
+    overflow-x: hidden;
+}
+@media (max-width:1100px){
+    #nav img{
+        width: 30%;
+    }
+  
+}
+@media (max-width:1250px){
+  #page1 .mir{
+    margin-top: 100px;
+  }
+}
+@media (max-width:600px){
+    #nav img{
+        width: 50%;
+    }
+    #nav h1{
+        display: none;
+    }
+}
+@media (max-width:400px){
+    #nav img{
+        width: 60%;
+    }
+    #nav h1{
+        display: none;
+        
+    }
+}
+@media(max-width:1000px){
+    .elem{
+        flex-direction: column;
+        gap: 100px;
+    }
+    .elem1 , .elem2 , .elem3{
+        width: 100%;
+    }
+    .elem2{
+        border: none;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 100px 0px;
+    }
+    .elem2 h3{
+        font-size: 60px;
+    }
+    #page1 .mir{
+        margin-top: 1100px;
+        font-size: 20vw;
+        padding: 0px 20px;
+        letter-spacing: 6px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+@media (max-width:500px){
+    #page1 .mir{
+        font-size: 15vw;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+  
+}
+#page2 .left h1{
+    margin-top: 110px !important;
+}
+
+.drop{
+text-align: left !important;
+margin: 0px !important;
+padding: 0px 30px !important;
+width: 100% !important;
+}
+
+}
+
+@media (max-width:1200px){
+    #page2{
+        flex-direction: column;
+        
+    }
+    #page2 .left{
+        width: 100%;
+        padding: 10px 0px;
+        margin: 0px;
+    }
+}
+#page2 .left{
+
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #1C1C1A;
+    margin-top: 100px;
+}
+#page2 .left h1{
+ font-size: 8vw;
+ font-family: font2;
+ text-align: center;
+ letter-spacing: -5px;
+ font-weight: 100;
+ color:#1C1C1A;
+ line-height: 50px;
+ margin-top: 60px;
+ margin-right: 40px;
+ margin-left: 40px;
+}
+#page2 .left #spa{
+ font-size: 11vw;
+ font-family: font2;
+ text-align: center;
+ letter-spacing: -5px;
+ font-weight: 200;
+ color:#1C1C1A;
+ text-decoration: line-through 2px solid ;
+}
+#page2 .right{
+    height: 100%;
+    width: 100%;
+
+margin-top: 50px;
+}
+#page2 .left img{
+    width: 100%;
+    height: 50%;
+    padding: 10px 30px;
+    object-fit: cover;
+}
+
+
+#page2 .right img{
+    height: 60%;
+    width: 94%;
+    object-fit: cover;
+margin: 40px 30px;
+margin-bottom: 30px;
+
+}
+*{
+    color: #1C1C1A;
+}
+.drop{
+margin: 0px 30px;
+    font-size: 2.6vw;
+    font-family: font4 ;
+    font-weight: 100;
+    line-height: 2.6vw;
+    width: 95%;
+    padding: 0px 30px;
+}
+.right p{
+    width: 100%;
+    margin: 0px 60px;
+    font-size: 6.7vw;
+    text-align: start;
+    font-family: font2;
+    letter-spacing: 2px;
+line-height: 7vw;
+font-weight: 900;
+text-decoration: line-through 1px solid;
+}
+@media (max-width:1100px){
+    svg , #string ,#string>span{
+        display: none;
+    }
+}
+@media (max-width:1200px){
+    #page2{
+        flex-direction: column;
+        
+    }
+    #page2 .left{
+        width: 70%;
+        padding: 10px 0px;
+      border: none;
+    }
+    #page2 .left img{
+        width: 100%;
+        padding: 10px 40px;
+
+      height: 600px;
+    }
+    .drop{
+        font-size: 5vw;
+        line-height: 4vw;
+    }
+.right p{
+    text-align: center;
+    margin: 0px;
+    font-size: 8.5vw;
+    line-height:9vw ;
+}
+}
+@media (max-width:800px){
+ 
+    #page2 .left{
+        width: 100%;
+        padding: 10px 0px;
+      border: none;
+    }
+    #page2 .left img{
+        width: 100%;
+        padding: 10px 20px;
+
+      height: 400px;
+    }
+    .drop{
+        font-size: 6.7vw;
+        line-height: 7.5vw;
+        text-align: center !important;
+
+        margin: 0px 40px !important;
+        width: 85% !important;
+        padding: 30px 20px !important;
+        border-bottom: 1px solid #1c1c1A;
+    }
+.right p{
+    text-align: center;
+    margin-top: -30px !important;
+    padding-top: 0px !important;
+    font-size: 10vw;
+    line-height:12vw ;
+
+    text-decoration: none !important;
+    text-decoration: underline 2px solid #1c1c1A !important;
+    text-underline-offset: 2vw;
+}
+
+#page2 .left h1{
+    letter-spacing: 0px;
+    font-size: 10vw;
+}
+#page2 .left #spa{
+    letter-spacing: 0px;
+}
+#page2 .right img{
+    height: 410px;
+    width: 100%;
+object-fit: cover;
+    padding: 10px 20px;
+    margin-left: 0px;
+margin-bottom: 30px;
+
+
+}}
+.elem2 h2{
+    background-color: #1C1C1A;
+    color: #BFB9AF;
+}
+
+    #page3{
+        background: #BFB9AF;
+    }
+    
+         /* STRICTLY hide scrollbar until GSAP animation finishes */
+     body, html {
+         overflow: hidden !important;
+         width: 100%;
+         height: 100%;
+     }
+     
+     /* Hide scrollbars on all browsers - STRICT */
+     body::-webkit-scrollbar, html::-webkit-scrollbar {
+         display: none !important;
+         width: 0 !important;
+         height: 0 !important;
+     }
+     
+     body, html {
+         -ms-overflow-style: none !important;
+         scrollbar-width: none !important;
+     }
+     
+     /* Hide scrollbars on main container until animation completes - STRICT */
+     .main2 {
+         overflow: hidden !important;
+     }
+     
+     .main2.scroll-enabled {
+         overflow: visible !important;
+     }
+     
+     /* Additional strict hiding */
+     * {
+         scrollbar-width: none !important;
+     }
+     
+     *::-webkit-scrollbar {
+         display: none !important;
+         width: 0 !important;
+         height: 0 !important;
+     }
+     
+     /* Ensure Locomotive container has proper dimensions */
+     .main2[data-scroll-container] {
+         height: auto;
+         min-height: 100vh;
+     }
+    #string{
+margin-top: 0px !important;
+        height: 50vh;
+        width:100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #BFB9AF;
+    }
+    svg{
+    overflow: visible;
+    height: fit-content;
+
+
+    }
+.main2{
+    background:#9e9a93;
+    min-height: 100vh;
+}
+#page3{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+.fullelem{
+  
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #BFB9AF;
+
+}
+
+
+
+.elemright{
+
+    height: 85%;
+width: 65%;
+    margin: 0px 30px;
+    display: flex; 
+    margin-top: -50px;
+    align-items: center;
+}
+.elemright img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+border-radius: 20px;
+}
+.elemleft{
+
+height: 100%;
+
+width: 45%;
+margin: 0px 30px;
+display: flex; 
+align-items: center;
+}
+.elemleft h5{
+
+    font-family: font2;
+    font-size: 26vw;
+font-weight: 300;
+    text-align: center;
+    line-height: 20vw;
+    padding: 30px 40px;
+    letter-spacing: -10px;
+}
+.strikethrough{
+
+    font-family: font2;
+    font-size: 29vw;
+font-weight: 300;
+    text-align: left;
+    line-height: 25vw;
+    padding: 0px 0px;
+    letter-spacing: -20px;
+    text-decoration: line-through 4px solid #1c1c1A;
+}
+#page4{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+   background: #BFB9AF;
+}
+.fullelem2{
+
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin-top: -90px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.fullelemleft{
+
+    width: 35%;
+    height: 100%;
+
+}
+.fullelemleft img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 10px 50px;
+    border-radius: 40px;
+    
+}
+.fullelemright{
+
+    width: 65%;
+    height: 100%;
+
+}
+.fullelemright h5{
+
+font-family: font2;
+font-size: 24.3vw;
+font-weight: 300;
+text-align: start;
+line-height: 20vw;
+padding: 30px 0px;
+letter-spacing: -10px;
+}
+</style>
+<body bgcolor="#BFB9AF;">
+    <div class="main2" data-scroll-container>
+<div id="main">
+    <div id="page1" data-scroll-section>
+        <div id="nav">
+            <h1>Ayaan , PK</h1>
+        <img src="gg.png" alt="">
+        <i class="ri-menu-2-line"></i>
+    </div>
+    <div class="elem">
+
+        <div class="elem1">
+            <div class="wrap"><img src="il2.jpg" alt=""></div>
+            <h1>BAG | BAG</h1>
+            <h5> Explore the elegance of craftsmanship at Bagbag, where style meets functionality. Our website showcases a diverse collection of premium bags designed for every occasion.</h5>
+        </div>
+
+        <div class="elem2">
+            <h3>ALL WORK!</h3>
+            <h4>A FEATURED SELECTION THE LATEST WORK .__. OF THE LAST YEAR.</h4>
+            <h2>PORTFOLIO OF ME!</h2>
+    </div>
+        <div class="elem3">
+             <div class="wrap"><img src="il1.jpg" alt=""></div>
+        <h1>S-CLASS</h1>
+        <h5> Discover the epitome of luxury with our Mercedes S-Class website, where elegance meets cutting-edge design. Explore every detail of this iconic masterpiece through a sleek, black-and-white themed experience.</h5></div>
+    </div>
+    <h1 class="mir">portfolio</h1>
+</div>
+<div id="page2" data-scroll-section>
+<div class="left">
+<h1>INTERACTIVE</h1> <span id="spa">ARTIST!</span>
+<img src="star1.jpeg" alt="">
+
+<h3 class="drop"> Guy who transforms ideas into tangible, interactive experiences through smooth animations, micro-interactions, and bold layouts.
+    Every pixel has a purpose.</h3>
+</div>
+<div class="right">
+<img src="star2.jpeg" alt="">
+<p>DIGITAL ART DIRECTOR <br id="chal1"> INTERACTIVE DESIGNER <br> CREATIVE DEVELOPER <br id="chal2"> BASED IN PAKISTAN ...</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="page3" data-scroll-section>
+    <div id="string" > <span><img src="yo.svg" alt="" srcset="" height="50px"></span>
+        <svg width="1000">
+            <path d="M 10 100 Q 500 100 990 100" stroke="black" fill="transparent"/>
+        </svg> <span><img src="yo.svg" alt="" srcset="" height="50px"></span></div>
+<div class="fullelem">
+ <div class="elemleft">
+     <h5>THE <br id="solve"> <span class="strikethrough">PIXEL</span></h5>
+ </div>
+<div class="elemright">
+    <img src="star3.jpeg" alt="">
+</div>
+</div>
+        
+
+</div>
+
+<div id="page4" data-scroll-section>
+
+<div class="fullelem2">
+<div class="fullelemleft">
+    <img src="star4.jpeg" alt="">
+</div>
+<div class="fullelemright">
+<h5>PERFECT</h5>
+</div>
+</div>
+        
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+var path = "M 10 100 Q 500 100 990 100"
+var finalpath = "M 10 100 Q 500 100 990 100"
+
+    var string = document.querySelector("svg")
+
+    string.addEventListener("mousemove",function(dets){
+          path =`M 10 100 Q ${dets.x} ${dets.y} 990 100`
+          gsap.to("svg path" ,{
+            attr:{d: path},
+            duration:0.3,
+            ease:"power3.out"
+          })
+    })
+    string.addEventListener("mouseleave",function(dets){
+          gsap.to("svg path" ,{
+            attr:{d: finalpath},
+            duration:1.5,
+            ease:"elastic.out(1,0.2)"
+          })
+    })
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
